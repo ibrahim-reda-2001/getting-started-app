@@ -1,7 +1,6 @@
 FROM node:18-alpine
 WORKDIR /app
 COPY . .
-RUN apt-get update && apt-get install -y <yarn>
 RUN yarn install --production && yarn cache clean
 ENTRYPOINT [ "node" ]
 CMD [ "src/index.js" ]
